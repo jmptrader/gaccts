@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	fmt.Println("gaccts/gsnap v 04")
+	fmt.Println("gaccts/gsnap v 05")
 	gaccts.Init()
 	gaccts.ParseComsFile()
 	gaccts.ParseEtransFile()

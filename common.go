@@ -43,7 +43,7 @@ func Init() {
 
 	trydir("/home/mcarter/")
 
-	dataDir = rootDir + "redact/docs/accts/data/"
+	dataDir = rootDir + "redact/docs/accts2014/"
 }
 
 
