@@ -65,7 +65,7 @@ func DownloadComs() (jmaps []Jmap) {
 
 // Load latest Com values from file, as opposed to downloading them
 func RetrieveComs() {
-	gofiDir := rootDir + ".accts/gofi/"	
+	gofiDir := rootDir + ".ssa/gofi/"	
 	gofiFiles, err := filepath.Glob (gofiDir+ "2*.txt")
 	if err != nil { panic(err) }
 	//sortedGofiFiles := gofiFiles.sort()

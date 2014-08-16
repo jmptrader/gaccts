@@ -34,7 +34,7 @@ func AsFloat64(s string) (f float64) {
 func Init() {
 
 	// set root directory
-	rootDir = "C:/cygwin/home/mcarter/"	
+	rootDir = UserHomeDir() + "/" // "C:/cygwin/home/mcarter/"	
 
 	trydir := func (d string) {
 		_, err := os.Stat(d)
