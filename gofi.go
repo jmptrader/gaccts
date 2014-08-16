@@ -25,6 +25,7 @@ func mapifyResponseOrDie(gepic string, response []byte) Jmap {
         s = response
 
         var s1 []byte
+	//fmt.Println(gepic) // TODO remove
         s1 =  s[6:len(s)-3]
 
         var dat Jmap

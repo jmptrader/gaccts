@@ -28,7 +28,7 @@ const ( P = 0.01 ; GBP = 1.0 ; NIL = 0.0)
 
 type Com struct {
 	Sym string // 1
-	live bool  // 2 - should use qty count instead
+	Download bool  // 2 - should use qty count instead
 	Ctype int  // 3
 	scale float64 // 4
 	//exchange string
@@ -37,8 +37,8 @@ type Com struct {
 	Ucost float64 
 	Ubefore float64 // TODO this is never set
 	Uvalue float64 // 7
-	Download bool
-	name string // 8
+	// Download bool
+	Name string // 8
 }
 
 var Coms []Com
@@ -98,9 +98,9 @@ func processComFile (records [][]string) {
 
 		//live:= rec[1]
 		switch rec[2] {
-		case "LIVE": com.live = true
-		case "DEAD": com.live = false
-		default: panic("Expecting either LIVE or DEAD")
+		case "W": com.Download = true
+		case "-": com.Download = false
+		default: panic("Expecting either 'W' or '-' in download field")
 		}
 
 		switch rec[3] { 
@@ -122,12 +122,12 @@ func processComFile (records [][]string) {
 		//Coms[i].gepic = arr[1]
 		com.Gepic = rec[5]
 
-		uvalue := rec[7]
-		com.Download = uvalue == "?"
-		if ! com.Download { com.Uvalue = AsFloat64(uvalue) }
+		//uvalue := rec[7]
+		//com.Download = uvalue == "?"
+		//if ! com.Download { com.Uvalue = AsFloat64(uvalue) }
 
 
-		com.name = rec[8]
+		com.Name = rec[5]
 	}
 }
 /*
